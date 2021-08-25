@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # project specific
-    "pages",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
