@@ -1,24 +1,50 @@
 <!-- templates/base.html -->
 
-{%  block doctype %}
-<!DOCTYPE html>
-<html lang="en">
-{% endblock %}
+{% load static %}
 
-{%  block head %}
-<head>
-    <meta charset="UTF-8">
-    {%  block title %}
-    <title>Oregon Transfer App</title>
-    {%  endblock %}
-</head>
-{% endblock %}
+{% block doctype %}
+    <!doctype html>
+    <html lang="en">
+{% endblock doctype %}
 
-{% block header %}
-<header>
-  <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a>
-</header>
-{% endblock %}
+{% block head %}
+    <head>
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Peter Kazarinoff">
+    {% endblock meta %}
+    {% block favicon %}{% endblock favicon %}
+        <title>{% block title %}College Transfer App{% endblock title %}</title>
 
-{% block content %}
-{% endblock %}
+        {% block stylesheets %}
+            <!-- bootswatch materia theme -->
+            <link rel="stylesheet" href="{% static 'css/bootswatch_materia.min.css' %}">
+            {% block custom_stylesheets %}
+            {% endblock custom_stylesheets %}
+        {% endblock stylesheets %}
+    </head>
+{% endblock head %}
+
+{% block body %}
+<body>
+{%  block nav %}
+    {% include "nav.html" %}
+{% endblock nav %}
+{% block breadcrumb %}{% endblock breadcrumb %}
+
+  <main role="main" class="flex-shrink-0">
+      {% block content %}
+      {% endblock %}
+  </main><!-- /.container -->
+
+{% block javascripts %}
+    <!-- bootstrap js bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+{% endblock javascripts %}
+    
+</body>
+{% endblock body %}
+
+</html> 

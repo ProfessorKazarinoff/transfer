@@ -2,10 +2,18 @@
 
 {% extends 'base.html' %}
 
-{%  block title %}
-    <title>About</title>
-{%  endblock %}
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
 
 {% block content %}
-<h1>About page</h1>
-{% endblock %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>About Engineering Transfer Advising Guides</h1>
+        <p class="lead">These guides were constructed with Community College's transfer guide pages. Additional transfer equivalences were provided by University transfer maps, State transfer equivalencies and University transfer mapping pages.</p>
+        <a class="btn btn-lg btn-success" href="#" role="button">View All Majors »</a>
+    </div>
+</div> <!-- /container -->
+{% endblock content %}
