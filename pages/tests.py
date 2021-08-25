@@ -1,6 +1,5 @@
 # pages/tests.py
 
-# pages/tests.py
 from django.http import HttpRequest
 from django.test import SimpleTestCase
 from django.urls import reverse
