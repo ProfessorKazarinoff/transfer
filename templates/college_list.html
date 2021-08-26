@@ -1,0 +1,27 @@
+<!-- templates/college_list.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    {% for college in object_list %}
+    <div class="col-md-4">
+      <h2>{{ college.name }}</h2>
+      <p>{{ college.description }}</p>
+      <p><a class="btn btn-secondary" href="{% url 'college_detail' college.slug %}" role="button">View College &raquo;</a></p>
+    </div>
+    {% endfor %}
+  <hr>
+
+  </div> <!-- /row -->
+</div> <!-- /container -->
+
+{% endblock content %}

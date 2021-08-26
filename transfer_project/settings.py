@@ -22,6 +22,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     # project specific
+    "colleges.apps.CollegesConfig",
     "pages.apps.PagesConfig",
     "accounts",
 ]
@@ -106,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "America/Los_Angeles"
 
 USE_I18N = True
 
@@ -119,9 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (Path(BASE_DIR, "static"),)  # new
-STATIC_ROOT = Path(BASE_DIR, "staticfiles")  # new
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"  # new
+STATICFILES_DIRS = (Path(BASE_DIR, "static"),)
+STATIC_ROOT = Path(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
