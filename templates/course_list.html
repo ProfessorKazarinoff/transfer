@@ -1,0 +1,41 @@
+<!-- templates/course_list.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+<div class="container">
+    <h2>All Course Listing</h2>
+    <hr>
+    <h4>Engineering courses</h4>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Course number</th>
+                <th scope="col">Course name</th>
+                <th scope="col">Credits</th>
+                <th scope="col">College</th>
+                <th scope="col">Prerequisites</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in object_list %}
+            <tr>
+                <td><a class="course-link-color" href="{% url 'course_detail' course.id %}">{{ course.number }}</a></td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.credits }}</td>
+                <td>{{ course.college }}</td>
+                <td>{{ course.pre_reqs }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock content %}

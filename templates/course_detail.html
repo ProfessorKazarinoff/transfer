@@ -1,0 +1,22 @@
+<!-- templates/course_detail.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+
+<div class="container">
+    <h3>{{ object.number }} - {{ object.name }}</h3>
+    <hr>
+    <p>Credits: {{ object.credits }} </p>
+    <p>Prereqs: {{ object.pre_reqs }}</p>
+    <hr>
+    <p>Description: {{ object.description }}</p>
+</div>
+
+{% endblock content %}

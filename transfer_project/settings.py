@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     # project specific
     "colleges.apps.CollegesConfig",
+    "courses.apps.CoursesConfig",
     "pages.apps.PagesConfig",
     "accounts",
 ]
