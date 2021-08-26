@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "colleges.apps.CollegesConfig",
     "courses.apps.CoursesConfig",
     "pages.apps.PagesConfig",
+    "majors.apps.MajorsConfig",
     "accounts",
 ]
 
