@@ -1,0 +1,28 @@
+<!-- templates/college_major_list.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'css/majors_list.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      {% for college_major in object_list %}
+      <div class="col-md-4">
+        <h2>{{ college_major.major.abbreviation }} at {{college_major.college }}</h2>
+        <p>{{ college_major.description }}</p>
+        <p><a class="btn btn-secondary" href="{% url 'college_major_detail' college_major.id %}" role="button">View Courses &raquo;</a></p>
+      </div>
+      {% endfor %}
+    <hr>
+
+  </div> <!-- /container -->
+</div>
+
+{% endblock content %}

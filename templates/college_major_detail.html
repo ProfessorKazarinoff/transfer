@@ -1,0 +1,41 @@
+<!-- templates/college_major_detail.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'css/majors_list.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+<div class="container">
+    <h3>{{ object.college }}</h3>
+    <hr>
+    <h4>{{ object.major.name }} Advising Guide</h4>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Course Number</th>
+                <th scope="col">Course Title</th>
+                <th scope="col">Colleges</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in object.courses.all %}
+            <tr>
+                <td><a class="course-link-color" href="{% url 'course_detail' course.id %}">{{ course.number }}</a></td>
+                <td>{{ course.name }}</td>
+                <td>PCC, PSU, OSU</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+      <hr>
+
+    </div>
+
+{% endblock content %}
