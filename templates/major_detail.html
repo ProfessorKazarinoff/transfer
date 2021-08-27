@@ -10,9 +10,16 @@
 {% block content %}
 
 <div class="container">
-    <h3>{{ object.abbreviation }} - {{ object.name }}</h3>
-    <hr>
-    <p>Description: {{ object.description }}</p>
+    <div>
+        <h3>{{ object.abbreviation }} - {{ object.name }}</h3>
+        <hr>
+        <p>Description: {{ object.description }}</p>
+    </div>
+    <div>
+        <p>The following colleges offer this major:</p>
+        {% for college_major in college_major_list %}
+            <h5><a class="course-link-color" href="{% url 'college_major_detail' college_major.id %}">{{ college_major.college }} - {{ college_major.major }}</a></h4>
+        {% endfor %}
+    </div>
 </div>
-
 {% endblock content %}

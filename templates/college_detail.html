@@ -20,10 +20,10 @@
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-      {% for major in majors %}
+      {% for college_major in college_major_list %}
       <div class="col-md-4">
-        <h2>{{ major.name }}</h2>
-        <p>{{ major.description }}</p>
+        <h2>{{ college_major.major }}</h2>
+        <p>{{ college_major.description }}</p>
         <p><a class="btn btn-secondary" href="{% url 'college_major_detail' college_major.id %}" role="button">View Courses &raquo;</a></p>
       </div>
       {% endfor %}

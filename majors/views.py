@@ -1,5 +1,6 @@
 # majors/views.py
 
+from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 
 from .models import CollegeMajor, Major
@@ -8,6 +9,13 @@ from .models import CollegeMajor, Major
 class MajorDetailView(DetailView):
     model = Major
     template_name = "major_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        self.major = get_object_or_404(Major, id=self.kwargs["pk"])
+        context["college_major_list"] = CollegeMajor.objects.filter(major=self.major)
+        return context
+
 
 class MajorListView(ListView):
     model = Major
