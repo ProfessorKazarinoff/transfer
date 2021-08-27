@@ -7,6 +7,8 @@ from .models import College
 
 class CollegeDetailView(DetailView):
     model = College
+    #template_objects = College.objects.filter(collegemajor__major__abbreviation="ME")
+    #extra_context={'majors': template_objects}
     template_name = "college_detail.html"
 
 
