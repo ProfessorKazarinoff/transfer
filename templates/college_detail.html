@@ -24,7 +24,7 @@
       <div class="col-md-4">
         <h2>{{ college_major.major }}</h2>
         <p>{{ college_major.description }}</p>
-        <p><a class="btn btn-secondary" href="{% url 'college_major_detail' college_major.id %}" role="button">View Courses &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="{% url 'college_major_detail' college_major.pk %}" role="button">View Courses &raquo;</a></p>
       </div>
       {% endfor %}
     <hr>

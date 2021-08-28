@@ -18,4 +18,4 @@ class College(models.Model):
         return f"{self.name}"
 
     def get_absolute_url(self):
-        return reverse("college_detail", args=[str(self.slug)])
+        return reverse("college_detail", args=[str(self.id)])

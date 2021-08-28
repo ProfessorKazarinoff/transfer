@@ -14,7 +14,7 @@ class CollegeDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        self.college = get_object_or_404(College, slug=self.kwargs["slug"])
+        self.college = get_object_or_404(College, id=self.kwargs["pk"])
         context["college_major_list"] = CollegeMajor.objects.filter(
             college=self.college
         )
