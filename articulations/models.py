@@ -2,11 +2,17 @@
 
 from django.db import models
 from django.urls import reverse
+
 from courses.models import Course
 
+
 class Articulation(models.Model):
-    course1 = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="course1")
-    course2 = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="course2")
+    course1 = models.ForeignKey(
+        Course, on_delete=models.CASCADE, related_name="course1"
+    )
+    course2 = models.ForeignKey(
+        Course, on_delete=models.CASCADE, related_name="course2"
+    )
     URL = models.URLField(null=True, blank=True)
     description = models.TextField(max_length=500, null=True, blank=True)
 

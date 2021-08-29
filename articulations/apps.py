@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ArticulationsConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'articulations'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "articulations"

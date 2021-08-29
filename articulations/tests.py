@@ -6,6 +6,7 @@ from django.urls import reverse
 from accounts.models import CustomUser
 from colleges.models import College
 from courses.models import Course
+
 from .models import Articulation
 
 
@@ -57,11 +58,12 @@ class ArticulationTests(TestCase):
         course1 = Course.objects.get(id=1)
         course2 = Course.objects.get(id=2)
         Articulation.objects.create(
-            course1 = course1,
-            course2 = course2,
-            URL = "https://pcc.edu/engineering",
-            description = "Mt Hood class transfers to PSU",
+            course1=course1,
+            course2=course2,
+            URL="https://pcc.edu/engineering",
+            description="Mt Hood class transfers to PSU",
         )
+
     def test_text_content(self):
         articulation = Articulation.objects.get(id=1)
         expected_object_name = f"{articulation.course1.number} at {articulation.course1.college.abbreviation} --> {articulation.course2.number} at {articulation.course2.college.abbreviation}"
@@ -78,7 +80,9 @@ class ArticulationTests(TestCase):
 
     def test_articulation_detail_view(self):
         articulation = Articulation.objects.get(id=1)
-        response = self.client.get(reverse("articulation_detail", args=[str(articulation.id)]))
+        response = self.client.get(
+            reverse("articulation_detail", args=[str(articulation.id)])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "ENGR 211")
         self.assertTemplateUsed(response, "articulation_detail.html")
