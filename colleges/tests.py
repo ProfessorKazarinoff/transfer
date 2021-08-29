@@ -45,7 +45,7 @@ class CollegeTests(TestCase):
 
     def test_college_detail_view(self):
         college = College.objects.get(id=1)
-        response = self.client.get(reverse("college_detail", args=[str(college.slug)]))
+        response = self.client.get(reverse("college_detail", args=[str(college.id)]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Mt. Hood Community College")
         self.assertTemplateUsed(response, "college_detail.html")

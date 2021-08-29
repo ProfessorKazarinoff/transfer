@@ -1,0 +1,43 @@
+<!-- templates/articulation_list.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+<div class="container">
+    <h2>All Course Equivalency Listing</h2>
+    <hr>
+    <h4>Engineering courses</h4>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Course number</th>
+                <th scope="col">Course name</th>
+                <th scope="col">College</th>
+                <th scope="col">Equivalent Course number</th>
+                <th scope="col">Equivalent Course name</th>
+                <th scope="col">College</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for articulation in object_list %}
+            <tr>
+                <td><a class="course-link-color" href="{% url 'course_detail' articulation.course1.id %}">{{ articulation.course1.number }}</a></td>
+                <td>{{ articulation.course1.name }}</td>
+                <td>{{ articulation.course1.college }}</td>
+                <td><a class="course-link-color" href="{% url 'course_detail' articulation.course2.id %}">{{ articulation.course1.number }}</a></td>
+                <td>{{ articulation.course2.name }}</td>
+                <td>{{ articulation.course2.college }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock content %}

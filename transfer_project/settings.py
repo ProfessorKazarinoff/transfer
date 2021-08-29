@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "majors.apps.MajorsConfig",
     "accounts",
+    "articulations.apps.ArticulationsConfig",
 ]
 
 MIDDLEWARE = [

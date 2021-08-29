@@ -1,0 +1,21 @@
+<!-- templates/articulation_detail.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+
+<div class="container">
+    <h3>{{ object.course1.number }} at {{ object.course1.college.abbreviation }}  --> {{ object.course2.number }} at {{ object.course2.college.abbreviation }}</h3>
+    <hr>
+    <p>Description: {{ object.description}} </p>
+    <p>Reference: {{ object.URL }}</p>
+    <hr>
+</div>
+
+{% endblock content %}
