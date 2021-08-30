@@ -29,7 +29,10 @@ class CollegeMajor(models.Model):
     courses = models.ManyToManyField(Course, blank=True)
 
     class Meta:
-        ordering = ["major"]
+        ordering = [
+            "college",
+            "major",
+        ]
 
     def __str__(self):
         return f"{self.major.abbreviation} - {self.major.name} at {self.college.abbreviation}"
