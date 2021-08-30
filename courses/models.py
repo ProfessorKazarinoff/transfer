@@ -37,6 +37,9 @@ class Course(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ["college","number",]
+
     def __str__(self):
         return f"{self.number} {self.name} at {self.college}"
 
