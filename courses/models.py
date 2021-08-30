@@ -31,8 +31,8 @@ class Course(models.Model):
         CourseType, null=True, blank=True, on_delete=models.CASCADE
     )
     pre_reqs = models.CharField(max_length=50, blank=True)
-    description = models.TextField(max_length=500, blank=True)
-    course_outcomes = models.TextField(max_length=500, blank=True)
+    description = models.TextField(max_length=600, blank=True)
+    course_outcomes = models.TextField(max_length=1000, blank=True)
     URL = models.URLField(null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
