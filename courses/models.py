@@ -38,7 +38,10 @@ class Course(models.Model):
     added_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ["college","number",]
+        ordering = [
+            "college",
+            "number",
+        ]
 
     def __str__(self):
         return f"{self.number} {self.name} at {self.college}"
