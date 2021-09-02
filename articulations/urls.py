@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from .views import ArticulationDetailView, ArticulationListView
+from .views import ArticulationDetailView, ArticulationFilterView, ArticulationListView
 
 urlpatterns = [
     path(
@@ -13,4 +13,5 @@ urlpatterns = [
     path(
         "articulation_list/", ArticulationListView.as_view(), name="articulation_list"
     ),
+    path("articulation_filter/", ArticulationFilterView, name="articulation_filter"),
 ]

@@ -1,0 +1,49 @@
+<!-- articulation_filter/about.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block custom_stylesheets %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock custom_stylesheets %}
+
+{% block content %}
+<div class="container">
+    <h3> Filter Transfer Guides </h3>
+    <form method="GET" action=".">
+        <div class="form-group">
+            <label for="inputMajor">Major</label>
+            <select id="inputMajor", class="form-control", name="communitycollege">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="inputCommunityCollege">CommunityCollege</label>
+            <select id="inputCommunityCollege", class="form-control", name="communitycollege">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputUniversity">University</label>
+            <select id="inputUniversity", class="form-control", name="university">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <hr />
+    <div class="row">
+        <ul>
+            {% for articulation in queryset %}
+                <li>
+                    {{ articulation }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div> <!-- /container -->
+{% endblock content %}

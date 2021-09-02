@@ -56,8 +56,7 @@ class MajorTests(TestCase):
         major = Major.objects.get(id=1)
         expected_object_name = f"{major.abbreviation} - {major.name}"
         self.assertEquals(
-            expected_object_name,
-            "ME - Mechanical Engineering",
+            expected_object_name, "ME - Mechanical Engineering",
         )
 
     def test_major_list_view(self):

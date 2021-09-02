@@ -68,8 +68,7 @@ class ArticulationTests(TestCase):
         articulation = Articulation.objects.get(id=1)
         expected_object_name = f"{articulation.course1.number} at {articulation.course1.college.abbreviation} --> {articulation.course2.number} at {articulation.course2.college.abbreviation}"
         self.assertEquals(
-            expected_object_name,
-            "ENGR 211 at MHCC --> ENGR 211 at PSU",
+            expected_object_name, "ENGR 211 at MHCC --> ENGR 211 at PSU",
         )
 
     def test_articulation_list_view(self):
