@@ -8,7 +8,7 @@ from colleges.models import College
 
 
 class CourseType(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
     order = models.IntegerField(unique=True)
     description = models.TextField(max_length=500, blank=True)
 

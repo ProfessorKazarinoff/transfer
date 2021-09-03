@@ -10,7 +10,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="college", name="abbreviationn",),
+        migrations.RemoveField(
+            model_name="college",
+            name="abbreviationn",
+        ),
         migrations.AddField(
             model_name="college",
             name="abbreviation",

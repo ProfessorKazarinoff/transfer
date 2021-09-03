@@ -14,7 +14,9 @@
     <h3>{{ object.college }}</h3>
     <hr>
     <h4>{{ object.major.name }} Advising Guide</h4>
-
+    <hr>
+    {% for course_type in course_types %}
+    <h3>{{ course_type }} </h3>
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -25,14 +27,17 @@
         </thead>
         <tbody>
             {% for course in object.courses.all %}
+            {% if course.course_type.id == course_type.id %}
             <tr>
                 <td><a class="course-link-color" href="{% url 'course_detail' course.id %}">{{ course.number }}</a></td>
                 <td>{{ course.name }}</td>
                 <td>PCC, PSU, OSU</td>
             </tr>
+            {% endif %}
             {% endfor %}
         </tbody>
       </table>
+      {% endfor %}
 
       <hr>
 

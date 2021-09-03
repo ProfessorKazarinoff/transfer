@@ -1,0 +1,8 @@
+/* static/css/card_list.css
+-------------------------------------------------- */
+/* Brings main container with cards further below the menu */
+
+main > .container {
+	padding: 100px 15px 0;
+    padding-top: 125px;
+  }

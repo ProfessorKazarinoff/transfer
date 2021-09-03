@@ -3,6 +3,8 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 
+from courses.models import CourseType
+
 from .models import CollegeMajor, Major
 
 
@@ -25,6 +27,11 @@ class MajorListView(ListView):
 class CollegeMajorDetailView(DetailView):
     model = CollegeMajor
     template_name = "college_major_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["course_types"] = CourseType.objects.all()
+        return context
 
 
 class CollegeMajorListView(ListView):
