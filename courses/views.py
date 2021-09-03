@@ -1,6 +1,9 @@
 # courses/views.py
 
+from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
+
+from articulations.models import Articulation
 
 from .models import Course
 
