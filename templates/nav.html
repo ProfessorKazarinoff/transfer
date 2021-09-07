@@ -11,18 +11,30 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="majors">Majors <span class="caret"></span></a>
           <div class="dropdown-menu" aria-labelledby="majors">
-            <a class="dropdown-item" href="#">Mechanical Engineering</a>
-            <a class="dropdown-item" href="#">Electrical Engineering</a>
-            <a class="dropdown-item" href="#">Civil Engineering</a>
+            <a class="dropdown-item" href="{% url 'major_detail' 1 %}">Mechanical Engineering</a>
+            <a class="dropdown-item" href="{% url 'major_detail' 2 %}">Civil Engineering</a>
+            <a class="dropdown-item" href="{% url 'major_detail' 3 %}">Electrical Engineering</a>
+            <a class="dropdown-item" href="{% url 'major_detail' 5 %}">Chemical Engineering</a>
+            <a class="dropdown-item" href="{% url 'major_detail' 4 %}">Computer Science</a>
+            <a class="dropdown-item" href="{% url 'major_detail' 9 %}">Bio Engineering</a>
+            
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'major_list' %}">All Majors</a>
           </div>
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="colleges">Colleges <span class="caret"></span></a>
           <div class="dropdown-menu" aria-labelledby="colleges">
-            <a class="dropdown-item" rel="noopener" target="_blank" href="#">Portland State University</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 2 %}">Portland State University</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 3 %}">Oregon State University</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 4 %}">Oregon Institue of Technology</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Portland Community College</a>
-            <a class="dropdown-item" href="#">Mt. Hood Community College</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 1 %}">Portland Community College</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 7 %}">Mt. Hood Community College</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 5 %}">Clackamas Community College</a>
+            <a class="dropdown-item" href="{% url 'college_detail' 6 %}">Chemeketa Community College</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'college_list' %}">All Colleges</a>
           </div>
         </li>
       </li>
