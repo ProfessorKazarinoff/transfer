@@ -11,12 +11,12 @@
 
 {% block content %}
 <div class="container">
-    <h3>{{ object.college }}</h3>
+    <h2>{{ object.college }}</h2>
     <hr>
-    <h4>{{ object.major.name }} Advising Guide</h4>
+    <h3>{{ object.major.name }} Advising Guide</h3>
     <hr>
     {% for course_type in course_types %}
-    <h3>{{ course_type }} </h3>
+    <h4>{{ course_type }}</h4>
     <table class="table table-hover">
         <thead class="thead-light">
             <tr>
