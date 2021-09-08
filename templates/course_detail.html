@@ -11,12 +11,22 @@
 {% block content %}
 
 <div class="container">
-    <h3>{{ object.number }} - {{ object.name }}</h3>
-    <hr>
-    <p>Credits: {{ object.credits }} </p>
-    <p>Prereqs: {{ object.pre_reqs }}</p>
-    <hr>
-    <p>Description: {{ object.description }} <a class="course-link-color" href="{{ object.URL }}">Link</a></p>
+    <div>
+        <h3>{{ object.number }} - {{ object.name }}</h3>
+        <hr>
+        <p>Credits: {{ object.credits }} </p>
+        <p>Prereqs: {{ object.pre_reqs }}</p>
+        <hr>
+        <p>Description: {{ object.description }} <a class="course-link-color" href="{{ object.URL }}">Link</a></p>
+    </div>
+    <div>
+        {% if articulation_list %}
+            <h4> This course is equivalent to:</h4>
+            {% for articulation in articulation_list %}
+                <h5>{{ articulation }}</h5>
+            {% endfor %}
+        {% endif %}
+    </div>        
 </div>
 
 {% endblock content %}

@@ -11,7 +11,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name="coursetype",
-            options={"ordering": ["order"]},
+            name="coursetype", options={"ordering": ["order"]},
         ),
     ]
