@@ -3,6 +3,7 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
 
+from articulations.models import Articulation
 from courses.models import CourseType
 
 from .models import CollegeMajor, Major
@@ -31,6 +32,7 @@ class CollegeMajorDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["course_types"] = CourseType.objects.all()
+        context["articulations"] = Articulation.objects.all()
         return context
 
 
