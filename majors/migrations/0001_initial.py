@@ -29,9 +29,7 @@ class Migration(migrations.Migration):
                 ("name", models.CharField(max_length=50)),
                 ("abbreviation", models.CharField(max_length=10)),
             ],
-            options={
-                "ordering": ["abbreviation"],
-            },
+            options={"ordering": ["abbreviation"],},
         ),
         migrations.CreateModel(
             name="CollegeMajor",
@@ -67,8 +65,6 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={
-                "ordering": ["major"],
-            },
+            options={"ordering": ["major"],},
         ),
     ]

@@ -55,11 +55,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "transfer_project.urls"
 
+TEMPLATE_DIR = Path(BASE_DIR, "templates")
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "templates"),
+            TEMPLATE_DIR,
+            Path(TEMPLATE_DIR, "account"),
+            Path(TEMPLATE_DIR, "articulations"),
+            Path(TEMPLATE_DIR, "pages"),
+            Path(TEMPLATE_DIR, "colleges"),
+            Path(TEMPLATE_DIR, "courses"),
         ],  # new
         "APP_DIRS": True,
         "OPTIONS": {
@@ -94,15 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
 
